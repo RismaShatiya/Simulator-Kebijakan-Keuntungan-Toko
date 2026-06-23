@@ -342,7 +342,7 @@ def run_simulation(iklan, diskon):
 # ==================================================
 st.markdown("""
 <div class="header-wrap">
-    <div class="header-badge">📊 Machine Learning · Simulasi Bisnis</div>
+    <div class="header-badge">Machine Learning · Simulasi Bisnis</div>
     <h1 class="header-title">Simulator Kebijakan Keuntungan Toko</h1>
     <p class="header-sub">
         Analisis dampak perubahan anggaran iklan dan besaran diskon
@@ -355,10 +355,10 @@ st.markdown("""
 # SIDEBAR
 # ==================================================
 with st.sidebar:
-    st.markdown('<div class="sidebar-heading">⚙️ Pengaturan Simulasi</div>', unsafe_allow_html=True)
+    st.markdown('<div class="sidebar-heading">Pengaturan Simulasi</div>', unsafe_allow_html=True)
 
     iklan_slider = st.slider(
-        "💰 Anggaran Iklan (Juta Rp)",
+        "Anggaran Iklan (Juta Rp)",
         min_value=0,
         max_value=50,
         value=10,
@@ -366,7 +366,7 @@ with st.sidebar:
     )
 
     diskon_slider = st.slider(
-        "🏷️ Besaran Diskon (%)",
+        "Besaran Diskon (%)",
         min_value=0,
         max_value=50,
         value=10,
@@ -375,7 +375,7 @@ with st.sidebar:
 
     st.markdown("""
     <div class="sidebar-info">
-        <p><strong>📌 Titik Baseline</strong><br>
+        <p><strong>Titik Baseline</strong><br>
         Iklan &nbsp; : <strong>Rp 10 Juta</strong><br>
         Diskon : <strong>10%</strong><br>
         Prediksi baseline dihitung otomatis sebagai pembanding.</p>
@@ -400,22 +400,22 @@ col1, col2, col3 = st.columns(3)
 
 with col1:
     st.metric(
-        label="🎯 Prediksi Keuntungan",
+        label="Prediksi Keuntungan",
         value=f"Rp {hasil_pred:.2f} Jt",
         delta=f"{delta:+.2f} Jt vs baseline"
     )
 
 with col2:
     st.metric(
-        label="📍 Keuntungan Baseline",
+        label="Keuntungan Baseline",
         value=f"Rp {baseline_pred:.2f} Jt"
     )
 
 with col3:
     pct = (delta / baseline_pred * 100) if baseline_pred != 0 else 0
-    status = "🟢 Meningkat" if delta > 0 else ("🔴 Menurun" if delta < 0 else "⚪ Tidak Berubah")
+    status = "Meningkat" if delta > 0 else ("Menurun" if delta < 0 else "Tidak Berubah")
     st.metric(
-        label="📈 Status",
+        label="Status",
         value=status,
         delta=f"{pct:+.1f}% dari baseline"
     )
@@ -538,17 +538,17 @@ st.markdown('<div class="section-title">Ringkasan Semua Simulasi</div>', unsafe_
 c1, c2, c3 = st.columns(3)
 
 with c1:
-    st.metric("🔢 Total Simulasi", len(history_df))
+    st.metric("Total Simulasi", len(history_df))
 
 with c2:
     st.metric(
-        "🏆 Keuntungan Tertinggi",
+        "Keuntungan Tertinggi",
         f"Rp {history_df['Prediksi Keuntungan (Juta)'].max():.2f} Jt"
     )
 
 with c3:
     st.metric(
-        "📊 Rata-rata Keuntungan",
+        "Rata-rata Keuntungan",
         f"Rp {history_df['Prediksi Keuntungan (Juta)'].mean():.2f} Jt"
     )
 
@@ -571,7 +571,7 @@ st.markdown('<div class="section-title">Skenario Terbaik</div>', unsafe_allow_ht
 if len(ranking_df) > 0:
     best = ranking_df.iloc[0]
     st.success(
-        f"🏆 **Skenario terbaik** menghasilkan **Rp {best['Prediksi Keuntungan (Juta)']} Juta** "
+        f"**Skenario terbaik** menghasilkan **Rp {best['Prediksi Keuntungan (Juta)']} Juta** "
         f"— Iklan **Rp {best['Iklan (Juta)']} Jt** · Diskon **{best['Diskon (%)']}%**"
     )
 
@@ -580,7 +580,7 @@ st.dataframe(ranking_df, use_container_width=True, height=260)
 # ==================================================
 # HISTORY EXPANDER
 # ==================================================
-with st.expander("📋 Lihat Riwayat Lengkap Simulasi"):
+with st.expander("Lihat Riwayat Lengkap Simulasi"):
     st.dataframe(history_df, use_container_width=True)
 
 st.divider()
@@ -590,7 +590,7 @@ st.divider()
 # ==================================================
 col_btn, col_cap = st.columns([1, 4])
 with col_btn:
-    if st.button("🔄 Reset History"):
+    if st.button("Reset History"):
         st.session_state.history = []
         st.rerun()
 
