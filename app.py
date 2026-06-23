@@ -1,4 +1,3 @@
-```python
 import numpy as np
 import pandas as pd
 import streamlit as st
@@ -326,4 +325,4 @@ st.markdown("---")
 st.caption(
     "Simulator Kebijakan Keuntungan Toko | Streamlit Dashboard"
 )
-```
+
