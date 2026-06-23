@@ -115,14 +115,14 @@ st.write(
 # ==========================================
 
 iklan_slider = st.sidebar.slider(
-    "📢 Anggaran Iklan (Juta)",
+    "Anggaran Iklan (Juta)",
     min_value=0,
     max_value=50,
     value=10
 )
 
 diskon_slider = st.sidebar.slider(
-    "🏷️ Besaran Diskon (%)",
+    "Besaran Diskon (%)",
     min_value=0,
     max_value=50,
     value=10
@@ -151,13 +151,13 @@ hasil_pred, delta = run_simulation(
 # ==========================================
 # HASIL PREDIKSI
 # ==========================================
-st.subheader("📈 Hasil Simulasi")
+st.subheader("Hasil Simulasi")
 
 col1, col2 = st.columns(2)
 
 with col1:
     st.metric(
-        label="💰 Prediksi Keuntungan",
+        label="Prediksi Keuntungan",
         value=f"Rp {hasil_pred:.2f} Juta",
         delta=f"{delta:.2f} Juta"
     )
@@ -177,7 +177,7 @@ with col2:
 # ==========================================
 # VISUALISASI
 # ==========================================
-st.subheader("📊 Perbandingan Baseline vs Intervensi")
+st.subheader("Perbandingan Baseline vs Intervensi")
 
 data_plot = pd.DataFrame({
     "Skenario": ["Baseline", "Intervensi"],
@@ -212,7 +212,7 @@ history_df = pd.DataFrame(st.session_state.history)
 # ==========================================
 # RINGKASAN
 # ==========================================
-st.subheader("📌 Ringkasan Simulasi")
+st.subheader("Ringkasan Simulasi")
 
 c1, c2, c3 = st.columns(3)
 
@@ -265,7 +265,7 @@ for i in range(len(ranking_df)):
 
 ranking_df.insert(0, "Ranking", medals)
 
-st.subheader("🏆 Ranking Skenario Terbaik")
+st.subheader("Ranking Skenario Terbaik")
 
 st.dataframe(
     ranking_df,
