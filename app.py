@@ -101,7 +101,7 @@ def run_simulation(new_iklan, new_diskon):
 # ==========================================
 st.markdown("""
 <div class="title-box">
-    <h1>🚀 Simulator Kebijakan Keuntungan Toko</h1>
+    <h1>Simulator Kebijakan Keuntungan Toko</h1>
 </div>
 """, unsafe_allow_html=True)
 
