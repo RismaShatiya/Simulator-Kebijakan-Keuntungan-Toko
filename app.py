@@ -8,7 +8,7 @@ from sklearn.linear_model import LinearRegression
 # ==========================================
 st.set_page_config(
     page_title="Simulator Kebijakan Keuntungan",
-    page_icon="logo.jpeg",
+    page_icon="logo.png",
     layout="wide"
 )
 
